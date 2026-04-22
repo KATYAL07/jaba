@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Eats | Volunteer Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="volunteer">
+    <div id="loading-overlay" class="loading-overlay"><div class="loader-spinner"></div></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><span class="logo-icon">🍃</span><span class="logo-text">Unity Eats</span></div>
+            <div class="nav-right">
+                <div class="nav-user-info">
+                    <div class="user-avatar" id="nav-avatar">V</div>
+                    <div class="user-details">
+                        <span class="user-name" id="nav-user-name">User</span>
+                        <span class="user-role-badge" id="nav-user-role">VOLUNTEER</span>
+                    </div>
+                </div>
+                <button class="btn-logout" id="logout-btn"><span>⏻</span> Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="dashboard-section">
+            <div class="dashboard-container">
+                <div class="dashboard-header">
+                    <div>
+                        <h2 class="dashboard-title">Volunteer Dashboard</h2>
+                        <p class="dashboard-subtitle">Pick up & deliver accepted donations</p>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="btn-secondary" id="refresh-btn">🔄 Refresh</button>
+                    </div>
+                </div>
+
+                <div class="listings-section">
+                    <h3 class="section-heading">📦 Available Deliveries</h3>
+                    <p class="section-desc">Listings accepted by NGOs that need a volunteer for pickup</p>
+                    <div class="listings-grid" id="active-deliveries">
+                        <div class="loading-cards"><div class="skeleton-card"></div><div class="skeleton-card"></div></div>
+                    </div>
+                </div>
+
+                <div class="listings-section">
+                    <h3 class="section-heading">🚴 My Assigned Deliveries</h3>
+                    <div class="listings-grid" id="volunteer-deliveries">
+                        <div class="loading-cards"><div class="skeleton-card"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-container" class="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>

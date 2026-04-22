@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Eats | Community Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="beneficiary">
+    <div id="loading-overlay" class="loading-overlay"><div class="loader-spinner"></div></div>
+
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><span class="logo-icon">🍃</span><span class="logo-text">Unity Eats</span></div>
+            <div class="nav-right">
+                <div class="nav-user-info">
+                    <div class="user-avatar" id="nav-avatar">B</div>
+                    <div class="user-details">
+                        <span class="user-name" id="nav-user-name">User</span>
+                        <span class="user-role-badge" id="nav-user-role">BENEFICIARY</span>
+                    </div>
+                </div>
+                <button class="btn-logout" id="logout-btn"><span>⏻</span> Logout</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="dashboard-section">
+            <div class="dashboard-container">
+                <div class="beneficiary-hero">
+                    <div class="beneficiary-icon">🤲</div>
+                    <h3>Community Food Dashboard</h3>
+                    <p>View available food distributions near you. Updated in real-time as restaurants post surplus food.</p>
+                </div>
+
+                <div class="stats-grid" id="stats-grid" style="margin-bottom: 40px;">
+                    <div class="stat-card">
+                        <div class="stat-icon">📦</div>
+                        <div class="stat-number" id="stat-available">--</div>
+                        <div class="stat-label">Listings Available</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">✅</div>
+                        <div class="stat-number" id="stat-accepted">--</div>
+                        <div class="stat-label">Accepted by NGOs</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🚀</div>
+                        <div class="stat-number" id="stat-delivered">--</div>
+                        <div class="stat-label">Successfully Delivered</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">🍃</div>
+                        <div class="stat-number" id="stat-total">--</div>
+                        <div class="stat-label">Total Listings</div>
+                    </div>
+                </div>
+
+                <div class="listings-section">
+                    <h3 class="section-heading">🌿 Food Available Near You</h3>
+                    <div class="listings-grid" id="public-listings">
+                        <div class="loading-cards"><div class="skeleton-card"></div><div class="skeleton-card"></div></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast-container" class="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>

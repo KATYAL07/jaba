@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unity Eats | Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="login">
+
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loader-content">
+            <div class="loader-logo"><span class="logo-icon">🍃</span><span class="logo-text">Unity Eats</span></div>
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <div id="auth-modal" class="modal">
+        <div class="modal-backdrop" id="modal-backdrop"></div>
+        <div class="modal-container">
+            <div class="modal-header">
+                <div class="modal-logo">
+                    <span class="logo-icon">🍃</span>
+                    <span>Unity Eats</span>
+                </div>
+                <div class="auth-tabs">
+                    <button class="auth-tab active" id="tab-login" data-tab="login">Sign In</button>
+                    <button class="auth-tab" id="tab-register" data-tab="register">Join Us</button>
+                </div>
+            </div>
+
+            <div class="modal-body">
+                <form id="login-form" class="auth-form">
+                    <h2 class="form-title">Welcome Back</h2>
+                    <p class="form-subtitle">Sign in to continue making a difference</p>
+
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉</span>
+                            <input type="email" id="login-email" name="email" placeholder="you@example.com" required>
+                        </div>
+                        <span class="field-error" id="login-email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="login-password" name="password" placeholder="••••••••" required>
+                        </div>
+                        <span class="field-error" id="login-password-error"></span>
+                    </div>
+
+                    <div class="quick-fill-section">
+                        <p class="quick-fill-label">Quick Demo Login:</p>
+                        <div class="quick-fill-buttons">
+                            <button type="button" class="quick-fill-btn" data-email="restaurant@demo.com" data-pw="Demo@1234">🏪 Restaurant</button>
+                            <button type="button" class="quick-fill-btn" data-email="ngo@demo.com" data-pw="Demo@1234">🤝 NGO</button>
+                            <button type="button" class="quick-fill-btn" data-email="volunteer@demo.com" data-pw="Demo@1234">🚴 Volunteer</button>
+                            <button type="button" class="quick-fill-btn" data-email="beneficiary@demo.com" data-pw="Demo@1234">👥 Beneficiary</button>
+                        </div>
+                    </div>
+
+                    <div class="form-error-banner hidden" id="login-error-banner"></div>
+
+                    <button type="submit" class="btn-primary btn-full" id="login-submit-btn">
+                        <span class="btn-text">Sign In</span>
+                        <span class="btn-spinner hidden"></span>
+                    </button>
+                </form>
+
+                <form id="register-form" class="auth-form hidden">
+                    <h2 class="form-title">Join the Movement</h2>
+                    <p class="form-subtitle">Create your account to start redistributing food</p>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reg-fullname">Full Name *</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">👤</span>
+                                <input type="text" id="reg-fullname" placeholder="Letters and spaces only" required pattern="^[A-Za-z ]{2,100}$">
+                            </div>
+                            <span class="field-error" id="reg-fullname-error"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="reg-phone">Phone Number *</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">📱</span>
+                                <input type="tel" id="reg-phone" placeholder="+91XXXXXXXXXX" required pattern="^\+?[1-9]\d{9,14}$">
+                            </div>
+                            <span class="field-error" id="reg-phone-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-email">Email Address *</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉</span>
+                            <input type="email" id="reg-email" placeholder="you@example.com" required>
+                        </div>
+                        <span class="field-error" id="reg-email-error"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="reg-password">Password *</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🔒</span>
+                            <input type="password" id="reg-password" placeholder="Min 8 chars, uppercase, number, symbol" required>
+                        </div>
+                        <span class="field-error" id="reg-password-error"></span>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reg-role">Your Role *</label>
+                            <div class="input-wrapper select-wrapper">
+                                <span class="input-icon">🏷</span>
+                                <select id="reg-role" required>
+                                    <option value="">Select a role</option>
+                                    <option value="RESTAURANT">🏪 Restaurant</option>
+                                    <option value="NGO">🤝 NGO</option>
+                                    <option value="VOLUNTEER">🚴 Volunteer</option>
+                                    <option value="BENEFICIARY">👥 Beneficiary</option>
+                                </select>
+                            </div>
+                            <span class="field-error" id="reg-role-error"></span>
+                        </div>
+                        <div class="form-group" id="org-name-group" style="display:none;">
+                            <label for="reg-org">Organization Name *</label>
+                            <div class="input-wrapper">
+                                <span class="input-icon">🏢</span>
+                                <input type="text" id="reg-org" placeholder="Your organization name">
+                            </div>
+                            <span class="field-error" id="reg-org-error"></span>
+                        </div>
+                    </div>
+
+                    <div class="form-error-banner hidden" id="register-error-banner"></div>
+
+                    <button type="submit" class="btn-primary btn-full" id="register-submit-btn">
+                        <span class="btn-text">Create Account</span>
+                        <span class="btn-spinner hidden"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <div id="toast-container" class="toast-container"></div>
+    <script src="app.js"></script>
+</body>
+</html>
