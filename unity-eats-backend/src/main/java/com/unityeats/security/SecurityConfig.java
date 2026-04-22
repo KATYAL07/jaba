@@ -57,11 +57,15 @@ import java.util.List;
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity // Enables @PreAuthorize at method level
-@RequiredArgsConstructor
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
     private final UserRepository userRepository;
+
+    public SecurityConfig(@org.springframework.context.annotation.Lazy JwtAuthFilter jwtAuthFilter, UserRepository userRepository) {
+        this.jwtAuthFilter = jwtAuthFilter;
+        this.userRepository = userRepository;
+    }
 
     @Value("${app.cors.allowed-origins}")
     private String allowedOrigins;

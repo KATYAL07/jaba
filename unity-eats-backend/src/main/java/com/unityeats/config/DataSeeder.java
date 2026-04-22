@@ -57,7 +57,7 @@ public class DataSeeder {
             String encodedPassword = passwordEncoder.encode("Demo@1234");
 
             User restaurant = userRepository.save(User.builder()
-                    .fullName("Ramesh Sharma")
+                    .fullName("Arnav Katyal")
                     .email("restaurant@demo.com")
                     .phone("+919876543210")
                     .password(encodedPassword)
@@ -66,7 +66,7 @@ public class DataSeeder {
                     .build());
 
             User restaurant2 = userRepository.save(User.builder()
-                    .fullName("Priya Patel")
+                    .fullName("Ayush Singh")
                     .email("restaurant2@demo.com")
                     .phone("+919123456789")
                     .password(encodedPassword)
@@ -75,7 +75,7 @@ public class DataSeeder {
                     .build());
 
             User ngo = userRepository.save(User.builder()
-                    .fullName("Meena Krishnan")
+                    .fullName("Arnav Katyal")
                     .email("ngo@demo.com")
                     .phone("+918765432109")
                     .password(encodedPassword)
@@ -84,7 +84,7 @@ public class DataSeeder {
                     .build());
 
             User volunteer = userRepository.save(User.builder()
-                    .fullName("Arjun Mehta")
+                    .fullName("Ayush Singh")
                     .email("volunteer@demo.com")
                     .phone("+917654321098")
                     .password(encodedPassword)
@@ -93,7 +93,7 @@ public class DataSeeder {
                     .build());
 
             userRepository.save(User.builder()
-                    .fullName("Sunita Devi")
+                    .fullName("Arnav Katyal")
                     .email("beneficiary@demo.com")
                     .phone("+916543210987")
                     .password(encodedPassword)
@@ -112,7 +112,7 @@ public class DataSeeder {
                     .quantity(50)
                     .unit("servings")
                     .description("Freshly prepared Hyderabadi Dum Biryani with raita. Made for a wedding event.")
-                    .pickupAddress("12 MG Road, Bangalore, Karnataka 560001")
+                    .pickupAddress("Connaught Place, Delhi, India 110058")
                     .expiryHours(6)
                     .restaurant(restaurant)
                     .status(ListingStatus.AVAILABLE)
@@ -124,7 +124,7 @@ public class DataSeeder {
                     .quantity(30)
                     .unit("loaves")
                     .description("Freshly baked whole wheat and multigrain loaves from morning batch.")
-                    .pickupAddress("45 Indiranagar, Bangalore, Karnataka 560038")
+                    .pickupAddress("Hauz Khas, Delhi, India 110058")
                     .expiryHours(12)
                     .restaurant(restaurant2)
                     .status(ListingStatus.AVAILABLE)
@@ -136,7 +136,7 @@ public class DataSeeder {
                     .quantity(25)
                     .unit("servings")
                     .description("Rich and creamy paneer curry with naan bread.")
-                    .pickupAddress("67 Koramangala, Bangalore, Karnataka 560034")
+                    .pickupAddress("Karol Bagh, Delhi, India 110058")
                     .expiryHours(4)
                     .restaurant(restaurant)
                     .status(ListingStatus.AVAILABLE)
@@ -149,7 +149,7 @@ public class DataSeeder {
                     .quantity(100)
                     .unit("liters")
                     .description("Full cream fresh milk, collected this morning.")
-                    .pickupAddress("22 HSR Layout, Bangalore, Karnataka 560102")
+                    .pickupAddress("Lajpat Nagar, Delhi, India 110058")
                     .expiryHours(8)
                     .restaurant(restaurant2)
                     .status(ListingStatus.ACCEPTED)
@@ -163,7 +163,7 @@ public class DataSeeder {
                     .quantity(80)
                     .unit("servings")
                     .description("Plain steamed basmati rice.")
-                    .pickupAddress("5 Whitefield, Bangalore, Karnataka 560066")
+                    .pickupAddress("Dwarka, Delhi, India 110058")
                     .expiryHours(3)
                     .restaurant(restaurant)
                     .status(ListingStatus.DELIVERED)
